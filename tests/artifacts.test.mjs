@@ -3,7 +3,7 @@ import { readFile, readdir } from "node:fs/promises";
 import test from "node:test";
 
 test("dist contains exactly the fixed World V1 artifacts", async () => {
-  assert.deepEqual((await readdir("dist")).sort(), ["manifest.json", "plugin.js", "rpc.mjs"]);
+  assert.deepEqual((await readdir("dist")).sort(), ["agent.json", "manifest.json", "plugin.js", "rpc.mjs"]);
   assert.deepEqual(JSON.parse(await readFile("dist/manifest.json", "utf8")), {
     schemaVersion: 1,
     id: "todo-list",

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "methods": {
+    "todo.list": {
+      "description": "List all tasks with their id, text and completed flag.",
+      "params": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "todo.add": {
+      "description": "Add a task.",
+      "params": {
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 500
+          }
+        },
+        "additionalProperties": false
+      },
+      "writes": true
+    },
+    "todo.toggle": {
+      "description": "Toggle a task between done and not done.",
+      "params": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Task id from todo.list, e.g. todo-..."
+          }
+        },
+        "additionalProperties": false
+      },
+      "writes": true
+    },
+    "todo.remove": {
+      "description": "Delete a task.",
+      "params": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "writes": true
+    }
+  }
+}

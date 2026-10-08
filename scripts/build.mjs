@@ -19,3 +19,4 @@ await build({
 
 await cp("src/manifest.json", "dist/manifest.json");
 await cp("src/rpc.mjs", "dist/rpc.mjs");
+await cp("src/agent.json", "dist/agent.json");
